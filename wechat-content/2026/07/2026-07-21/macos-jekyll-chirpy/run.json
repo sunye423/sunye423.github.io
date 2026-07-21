@@ -24,7 +24,7 @@
   "external": {
     "git_commit": "ab25a626a4e9222aae9b4028f2faefb7f1fe33fb",
     "media_id": "iH-Hzok0G1wdGrK5DtuPAxjXGFQ6DODPWG-pqHmq57HCnw1GK7cUqYCmzeOcwnq_",
-    "pushed": false
+    "pushed": true
   },
   "history": [
     {
@@ -46,6 +46,14 @@
     {
       "at": "2026-07-21T15:55:09.312035+00:00",
       "state": "COMMITTED"
+    },
+    {
+      "at": "2026-07-21T15:55:19.517415+00:00",
+      "state": "PUSHED"
+    },
+    {
+      "at": "2026-07-21T15:55:19.518069+00:00",
+      "state": "COMPLETED"
     }
   ],
   "metadata": {
@@ -61,6 +69,6 @@
     "path": "/Users/sunye/develop/code_repository/github_blog/公众号文章-macOS搭建Jekyll-Chirpy实录.md",
     "sha256": "23e645fc4a58e88991b3b22ca38c5e064dd44d83d15a3b6d6d0f4e2d8d019e28"
   },
-  "state": "COMMITTED",
-  "updated_at": "2026-07-21T15:55:09.312031+00:00"
+  "state": "COMPLETED",
+  "updated_at": "2026-07-21T15:55:19.518665+00:00"
 }
