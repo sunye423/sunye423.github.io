@@ -1,0 +1,62 @@
+{
+  "approvals": {
+    "publish": {
+      "at": "2026-07-21T15:35:01.937129+00:00",
+      "context": {
+        "citation_mode": "none",
+        "color": "blue",
+        "profile": "fast",
+        "target_account": "xiguapi",
+        "theme": "default"
+      },
+      "files": [
+        "article.md",
+        "article.wechat.html",
+        "imgs/01-infographic-build-flow.png",
+        "imgs/02-site-preview.png",
+        "imgs/cover.png"
+      ],
+      "sha256": "089572092b99cc2f84c33de8ed0a30d9f745295eab7f46e147a34329d4a76f64"
+    }
+  },
+  "citation_mode": "none",
+  "created_at": "2026-07-21T15:17:56.919003+00:00",
+  "external": {
+    "git_commit": null,
+    "media_id": "iH-Hzok0G1wdGrK5DtuPAxjXGFQ6DODPWG-pqHmq57HCnw1GK7cUqYCmzeOcwnq_",
+    "pushed": false
+  },
+  "history": [
+    {
+      "at": "2026-07-21T15:17:56.919212+00:00",
+      "state": "CREATED"
+    },
+    {
+      "at": "2026-07-21T15:30:34.549515+00:00",
+      "state": "PREVIEW_READY"
+    },
+    {
+      "at": "2026-07-21T15:35:02.160979+00:00",
+      "state": "PUBLISH_APPROVED"
+    },
+    {
+      "at": "2026-07-21T15:54:24.109404+00:00",
+      "state": "WECHAT_DRAFTED"
+    }
+  ],
+  "metadata": {
+    "account": "xiguapi",
+    "author": "西瓜皮水果糖",
+    "brand": "西瓜皮水果糖",
+    "color": "blue",
+    "theme": "default"
+  },
+  "profile": "fast",
+  "schema": 2,
+  "source": {
+    "path": "/Users/sunye/develop/code_repository/github_blog/公众号文章-macOS搭建Jekyll-Chirpy实录.md",
+    "sha256": "23e645fc4a58e88991b3b22ca38c5e064dd44d83d15a3b6d6d0f4e2d8d019e28"
+  },
+  "state": "WECHAT_DRAFTED",
+  "updated_at": "2026-07-21T15:54:24.109316+00:00"
+}
