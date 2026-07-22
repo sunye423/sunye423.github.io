@@ -1,0 +1,4 @@
+interface:
+  display_name: "Publish Chirpy Blog"
+  short_description: "Prepare and locally preview Chirpy blog posts"
+  default_prompt: "Use $publishing-chirpy-blog to prepare this Markdown article and preview it locally."
