@@ -95,6 +95,115 @@ class MetadataTests(unittest.TestCase):
             prepare_post.yaml_scalar("0x10")
 
 
+class DuplicateHeadingTests(unittest.TestCase):
+    TITLE = "macOS 上搭建 Jekyll + Chirpy 技术博客"
+
+    def test_matching_atx_h1_and_one_following_blank_line_are_removed(self):
+        body = "\ufeff\r\n# macOS 上搭建 Jekyll + Chirpy 技术博客 ###\r\n\r\n正文  \r\n"
+        self.assertEqual(
+            "正文  \r\n",
+            prepare_post.strip_duplicate_leading_h1(body, self.TITLE),
+        )
+
+    def test_matching_setext_h1_is_removed(self):
+        body = "\nmacOS 上搭建 Jekyll + Chirpy 技术博客\n=====\n\n正文\n"
+        self.assertEqual(
+            "正文\n",
+            prepare_post.strip_duplicate_leading_h1(body, self.TITLE),
+        )
+
+    def test_four_space_indented_atx_looking_code_block_is_preserved_exactly(self):
+        body = "    # macOS 上搭建 Jekyll + Chirpy 技术博客\n\n正文\n"
+        self.assertEqual(
+            body,
+            prepare_post.strip_duplicate_leading_h1(body, self.TITLE),
+        )
+
+    def test_four_space_indented_setext_looking_code_block_is_preserved_exactly(self):
+        body = "    macOS 上搭建 Jekyll + Chirpy 技术博客\n    =====\n\n正文\n"
+        self.assertEqual(
+            body,
+            prepare_post.strip_duplicate_leading_h1(body, self.TITLE),
+        )
+
+    def test_tab_indented_atx_looking_code_block_is_preserved_exactly(self):
+        body = "\t# macOS 上搭建 Jekyll + Chirpy 技术博客\n\n正文\n"
+        self.assertEqual(
+            body,
+            prepare_post.strip_duplicate_leading_h1(body, self.TITLE),
+        )
+
+    def test_space_then_tab_indented_setext_code_block_is_preserved_exactly(self):
+        body = "   \tmacOS 上搭建 Jekyll + Chirpy 技术博客\n====\n\n正文\n"
+        self.assertEqual(
+            body,
+            prepare_post.strip_duplicate_leading_h1(body, self.TITLE),
+        )
+
+    def test_markdown_formatted_visible_title_matches(self):
+        body = "# **macOS** 上搭建 [`Jekyll`](https://jekyllrb.com) + ~~Chirpy~~ 技术博客\n\n正文\n"
+        self.assertEqual(
+            "正文\n",
+            prepare_post.strip_duplicate_leading_h1(body, self.TITLE),
+        )
+
+    def test_literal_intraword_underscore_is_not_removed_from_visible_text(self):
+        body = "# build_tool\n\n正文\n"
+        self.assertEqual(
+            body,
+            prepare_post.strip_duplicate_leading_h1(body, "buildtool"),
+        )
+
+    def test_escaped_formatting_marker_matches_its_visible_literal(self):
+        body = "# A \\* B\n\n正文\n"
+        self.assertEqual(
+            "正文\n",
+            prepare_post.strip_duplicate_leading_h1(body, "A * B"),
+        )
+
+    def test_code_span_markers_are_not_treated_as_formatting(self):
+        body = "# `build_tool * ~~`\n\n正文\n"
+        self.assertEqual(
+            body,
+            prepare_post.strip_duplicate_leading_h1(body, "buildtool"),
+        )
+
+    def test_different_leading_h1_is_preserved_exactly(self):
+        body = "\r\n# 不同标题\r\n\r\n正文  \r\n"
+        self.assertEqual(
+            body,
+            prepare_post.strip_duplicate_leading_h1(body, self.TITLE),
+        )
+
+    def test_matching_h1_after_content_is_preserved_exactly(self):
+        body = "引言\n\n# macOS 上搭建 Jekyll + Chirpy 技术博客\n"
+        self.assertEqual(
+            body,
+            prepare_post.strip_duplicate_leading_h1(body, self.TITLE),
+        )
+
+    def test_body_without_h1_is_preserved_exactly(self):
+        body = "\ufeff\n普通正文\n\n结尾  \n"
+        self.assertEqual(
+            body,
+            prepare_post.strip_duplicate_leading_h1(body, self.TITLE),
+        )
+
+    def test_only_one_following_blank_line_is_removed(self):
+        body = "# macOS 上搭建 Jekyll + Chirpy 技术博客\n\n\n正文\n"
+        self.assertEqual(
+            "\n正文\n",
+            prepare_post.strip_duplicate_leading_h1(body, self.TITLE),
+        )
+
+    def test_heading_and_title_that_normalize_to_empty_are_preserved(self):
+        body = "# **\n\n正文\n"
+        self.assertEqual(
+            body,
+            prepare_post.strip_duplicate_leading_h1(body, "**"),
+        )
+
+
 class RepositoryPreparationTests(unittest.TestCase):
     TITLE = "macOS 上搭建 Jekyll Chirpy 技术博客"
     CATEGORIES = "博客,建站"
@@ -729,6 +838,44 @@ class RepositoryPreparationTests(unittest.TestCase):
             "\nweights: [1, 2]\n",
             self.destination.read_text(encoding="utf-8"),
         )
+
+    def test_generated_post_removes_h1_matching_effective_title(self):
+        body = f"# {self.TITLE}\n\n正文末尾  \n"
+        source_bytes = body.encode("utf-8")
+        self.input.write_bytes(source_bytes)
+        before = self.input.read_bytes()
+
+        result = self._run(input_text=body)
+
+        self.assertEqual(0, result.returncode, result.stderr)
+        self.assertEqual(before, self.input.read_bytes())
+        with self.destination.open("r", encoding="utf-8", newline="") as stream:
+            _, generated_body = prepare_post.split_front_matter(stream.read())
+        self.assertEqual("正文末尾  \n", generated_body)
+
+    def test_skill_documents_duplicate_title_exception(self):
+        text = SKILL.read_text(encoding="utf-8")
+        self.assertIn("leading H1", text)
+        self.assertIn("effective Front Matter title", text)
+        self.assertIn("source file unchanged", text)
+
+
+class SkillSynchronizationTests(unittest.TestCase):
+    def test_installed_and_repository_skill_files_are_identical(self):
+        installed = Path("/Users/sunye/.codex/skills/publishing-chirpy-blog")
+        repository = SCRIPT.parents[1]
+        relative_files = (
+            Path("SKILL.md"),
+            Path("agents/openai.yaml"),
+            Path("scripts/prepare_post.py"),
+            Path("scripts/test_prepare_post.py"),
+        )
+        for relative_file in relative_files:
+            with self.subTest(relative_file=str(relative_file)):
+                self.assertEqual(
+                    (repository / relative_file).read_bytes(),
+                    (installed / relative_file).read_bytes(),
+                )
 
 
 class AtomicPublicationTests(unittest.TestCase):

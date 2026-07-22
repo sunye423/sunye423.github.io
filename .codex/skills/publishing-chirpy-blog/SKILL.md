@@ -17,7 +17,7 @@ Never run `git switch`, `git checkout`, `git worktree`, `git stash`, `git add`, 
 
 ## Infer metadata
 
-Inspect categories and tags in existing `_posts/` Front Matter first. Infer missing values semantically from the complete article while preserving every explicit source Front Matter value and the Markdown body:
+Inspect categories and tags in existing `_posts/` Front Matter first. Infer missing values semantically from the complete article while preserving every explicit source Front Matter value. Keep the source file unchanged. In the generated Chirpy post only, remove one leading H1 when its normalized visible text equals the effective Front Matter title; otherwise preserve the Markdown body exactly:
 
 - Preserve an explicit non-empty title. Otherwise use the first H1. If neither exists, infer a concise title from the opening paragraph and report that inference. If the article is empty or too thin to support a title, stop without writing and request a title or more content.
 - Choose 1–2 broad Chinese categories consistent with the repository taxonomy.
@@ -62,7 +62,7 @@ python3 "/Users/sunye/.codex/skills/publishing-chirpy-blog/scripts/prepare_post.
 
 The helper deletes only that exact request file after reading it, on both success and failure. It never deletes the parent or a sibling. If Python cannot start and therefore cannot consume the request, delete only that exact request file with the file-editing mechanism; never use a glob, recursive deletion, or parent deletion.
 
-Parse the single JSON receipt. Treat its `destination`, `permalink`, `metadata`, and `created` fields as authoritative. Stop on any error; do not overwrite a conflicting destination. Confirm the input source is unchanged and the generated Markdown body matches it.
+Parse the single JSON receipt. Treat its `destination`, `permalink`, `metadata`, and `created` fields as authoritative. Stop on any error; do not overwrite a conflicting destination. Confirm the source file unchanged. Confirm that the generated Markdown body matches it exactly except for one removed leading H1, plus at most one immediately following blank line, when that heading duplicates the effective Front Matter title.
 
 ## Validate
 

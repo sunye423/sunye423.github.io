@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 from datetime import datetime
+import html
 import json
 import math
 import os
@@ -403,8 +404,93 @@ def merge_metadata(
     return merged
 
 
+def normalize_heading_text(value: str) -> str:
+    """Return comparable visible text for a Markdown heading or title."""
+    protected: list[tuple[str, str]] = []
+
+    def protect(match: re.Match[str], content_group: int) -> str:
+        token = f"\ue000{len(protected)}\ue001"
+        protected.append((token, match.group(content_group)))
+        return token
+
+    normalized = re.sub(
+        r"(`+)(.*?)\1",
+        lambda match: protect(match, 2),
+        value,
+    )
+    normalized = re.sub(
+        r"\\([\\`*{}\[\]()#+.!_>\-])",
+        lambda match: protect(match, 1),
+        normalized,
+    )
+    normalized = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", normalized)
+    for pattern in (
+        r"~~(?=\S)(.*?\S)~~",
+        r"\*\*(?=\S)(.*?\S)\*\*",
+        r"(?<!\w)__(?=\S)(.*?\S)__(?!\w)",
+        r"(?<!\*)\*(?!\*)(?=\S)(.*?\S)(?<!\*)\*(?!\*)",
+        r"(?<!\w)_(?=\S)(.*?\S)_(?!\w)",
+    ):
+        normalized = re.sub(pattern, r"\1", normalized)
+    for token, literal in protected:
+        normalized = normalized.replace(token, literal)
+    if re.fullmatch(r"(?:\*\*|__|~~|\*|_)+", normalized):
+        normalized = ""
+    return " ".join(html.unescape(normalized).split())
+
+
+def strip_duplicate_leading_h1(body: str, title: str) -> str:
+    """Remove one leading H1 only when its visible text equals title."""
+    lines = body.splitlines(keepends=True)
+    first = 0
+    while first < len(lines):
+        visible = lines[first]
+        if first == 0:
+            visible = visible.removeprefix("\ufeff")
+        if visible.strip(" \t\r\n"):
+            break
+        first += 1
+    if first == len(lines):
+        return body
+
+    line = lines[first]
+    candidate_line = line.removeprefix("\ufeff") if first == 0 else line
+    candidate = ""
+    end = first
+    atx = re.match(r"^ {0,3}#(?!#)[ \t]+(.*?)[\r\n]*$", candidate_line)
+    if atx:
+        candidate = re.sub(r"[ \t]+#+[ \t]*$", "", atx.group(1))
+    elif (
+        re.match(
+            r"^(?! {4})(?! {0,3}\t) {0,3}[^\r\n]*\S[^\r\n]*[\r\n]*$",
+            candidate_line,
+        )
+        and first + 1 < len(lines)
+        and re.match(r"^ {0,3}=+[ \t]*(?:\r?\n)?$", lines[first + 1])
+    ):
+        candidate = candidate_line.rstrip("\r\n")
+        end = first + 1
+    else:
+        return body
+
+    normalized_candidate = normalize_heading_text(candidate)
+    normalized_title = normalize_heading_text(title)
+    if (
+        not candidate
+        or not normalized_candidate
+        or not normalized_title
+        or normalized_candidate != normalized_title
+    ):
+        return body
+
+    after = end + 1
+    if after < len(lines) and not lines[after].strip(" \t\r\n"):
+        after += 1
+    return "".join(lines[after:])
+
+
 def render_post(metadata: dict[str, object], body: str) -> str:
-    """Render supported Front Matter followed by the untouched Markdown body."""
+    """Render supported Front Matter followed by the prepared Markdown body."""
     lines = ["---"]
     if isinstance(metadata, FrontMatter):
         keys = [key for key in _REQUIRED_FIELDS if key in metadata]
@@ -454,7 +540,8 @@ def prepare_post(args: argparse.Namespace) -> dict[str, object]:
     effective_date = _validate_required_metadata(metadata, set(existing))
     effective_slug = _effective_slug(metadata, publication_slug)
     permalink = _effective_permalink(metadata, effective_slug)
-    rendered = render_post(metadata, body)
+    generated_body = strip_duplicate_leading_h1(body, str(metadata["title"]))
+    rendered = render_post(metadata, generated_body)
     rendered_bytes = rendered.encode("utf-8")
 
     posts = (repo / "_posts").resolve(strict=True)
