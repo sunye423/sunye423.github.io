@@ -26,7 +26,7 @@
   "external": {
     "git_commit": "adbb6fa032b6e82b6040fbdb5c9703d79a9f224b",
     "media_id": "iH-Hzok0G1wdGrK5DtuPA1G29bG2qf33XS7sjqMevv3ws4uso03v2FOn7_Y7nLcF",
-    "pushed": false
+    "pushed": true
   },
   "history": [
     {
@@ -48,6 +48,14 @@
     {
       "at": "2026-07-29T00:17:48.757393+00:00",
       "state": "COMMITTED"
+    },
+    {
+      "at": "2026-07-29T00:17:56.106893+00:00",
+      "state": "PUSHED"
+    },
+    {
+      "at": "2026-07-29T00:17:56.107581+00:00",
+      "state": "COMPLETED"
     }
   ],
   "metadata": {
@@ -61,6 +69,6 @@
     "path": "/Users/sunye/develop/code_repository/github_blog/drafts-agent-hot-terms/08-coding-agent.md",
     "sha256": "764b399d5d51957d79d5f6cdb7e52504be1bbfc68a1a87adfcb8473da068195a"
   },
-  "state": "COMMITTED",
-  "updated_at": "2026-07-29T00:17:48.757390+00:00"
+  "state": "COMPLETED",
+  "updated_at": "2026-07-29T00:17:56.108181+00:00"
 }
