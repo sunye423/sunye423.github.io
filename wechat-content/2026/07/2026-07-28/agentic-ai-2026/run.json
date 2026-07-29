@@ -1,0 +1,57 @@
+{
+  "approvals": {
+    "publish": {
+      "at": "2026-07-29T14:56:56.726054+00:00",
+      "context": {
+        "citation_mode": "none",
+        "color": "blue",
+        "profile": "fast",
+        "target_account": "xiguapi",
+        "theme": "default"
+      },
+      "files": [
+        "article.md",
+        "article.wechat.html",
+        "imgs/01-agent-loop.png",
+        "imgs/cover.png"
+      ],
+      "sha256": "4ef17512d2cd6db8df40c86cc4ac986fcacce9a4e19687c46a54e6c1438c16b7"
+    }
+  },
+  "citation_mode": "none",
+  "created_at": "2026-07-27T16:56:22.114467+00:00",
+  "external": {
+    "git_commit": null,
+    "media_id": null,
+    "pushed": false
+  },
+  "history": [
+    {
+      "at": "2026-07-27T16:56:22.114722+00:00",
+      "state": "CREATED"
+    },
+    {
+      "at": "2026-07-29T14:56:56.681875+00:00",
+      "state": "PREVIEW_READY"
+    },
+    {
+      "at": "2026-07-29T14:56:56.767967+00:00",
+      "state": "PUBLISH_APPROVED"
+    }
+  ],
+  "metadata": {
+    "account": "xiguapi",
+    "author": "西瓜皮水果糖",
+    "brand": "西瓜皮水果糖",
+    "color": "blue",
+    "theme": "default"
+  },
+  "profile": "fast",
+  "schema": 2,
+  "source": {
+    "path": "/Users/sunye/develop/code_repository/github_blog/wechat-content-worktree/wechat-content/2026/07/2026-07-28/agentic-ai-2026/draft.md",
+    "sha256": "5cd3546754a917b73ba119130810a93dd5b43bc7b32b69af73847146f749edfc"
+  },
+  "state": "PUBLISH_APPROVED",
+  "updated_at": "2026-07-29T14:56:56.767759+00:00"
+}
