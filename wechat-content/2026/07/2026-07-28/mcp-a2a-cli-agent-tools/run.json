@@ -24,7 +24,7 @@
   "citation_mode": "key",
   "created_at": "2026-07-28T16:23:16.198599+00:00",
   "external": {
-    "git_commit": null,
+    "git_commit": "00fa66d644ec1e6a063a34743751b5c85ad097c3",
     "media_id": "iH-Hzok0G1wdGrK5DtuPAw_McYA0YtfBx2RNFiBjtUdxCRPlBiXRFtgd4dz-pvz3",
     "pushed": false
   },
@@ -44,6 +44,10 @@
     {
       "at": "2026-07-29T00:15:18.309474+00:00",
       "state": "WECHAT_DRAFTED"
+    },
+    {
+      "at": "2026-07-29T00:17:36.885083+00:00",
+      "state": "COMMITTED"
     }
   ],
   "metadata": {
@@ -57,6 +61,6 @@
     "path": "/Users/sunye/develop/code_repository/github_blog/drafts-agent-hot-terms/02-mcp-protocol.md",
     "sha256": "f82462c46b0b6efd0e1055076b04e0fd64ee35f7a8dc559254036080333beaba"
   },
-  "state": "WECHAT_DRAFTED",
-  "updated_at": "2026-07-29T00:15:18.309172+00:00"
+  "state": "COMMITTED",
+  "updated_at": "2026-07-29T00:17:36.885080+00:00"
 }
