@@ -1,0 +1,57 @@
+{
+  "approvals": {
+    "publish": {
+      "at": "2026-07-29T14:56:57.214252+00:00",
+      "context": {
+        "citation_mode": "none",
+        "color": "blue",
+        "profile": "fast",
+        "target_account": "xiguapi",
+        "theme": "default"
+      },
+      "files": [
+        "article.md",
+        "article.wechat.html",
+        "imgs/01-gui-agent-routes.png",
+        "imgs/cover.png"
+      ],
+      "sha256": "14d09bec1911a1fc852510b2ba5e829873107af365ffd4a4ce0444194b90235b"
+    }
+  },
+  "citation_mode": "none",
+  "created_at": "2026-07-27T16:56:22.251156+00:00",
+  "external": {
+    "git_commit": null,
+    "media_id": null,
+    "pushed": false
+  },
+  "history": [
+    {
+      "at": "2026-07-27T16:56:22.251365+00:00",
+      "state": "CREATED"
+    },
+    {
+      "at": "2026-07-29T14:56:57.173279+00:00",
+      "state": "PREVIEW_READY"
+    },
+    {
+      "at": "2026-07-29T14:56:57.252399+00:00",
+      "state": "PUBLISH_APPROVED"
+    }
+  ],
+  "metadata": {
+    "account": "xiguapi",
+    "author": "西瓜皮水果糖",
+    "brand": "西瓜皮水果糖",
+    "color": "blue",
+    "theme": "default"
+  },
+  "profile": "fast",
+  "schema": 2,
+  "source": {
+    "path": "/Users/sunye/develop/code_repository/github_blog/wechat-content-worktree/wechat-content/2026/07/2026-07-28/gui-agent-computer-use/draft.md",
+    "sha256": "d37a209bf5caf7ea3b8e8cba2fd8d602e6f46bdc45c9f883a50439f41e1ae88e"
+  },
+  "state": "PUBLISH_APPROVED",
+  "updated_at": "2026-07-29T14:56:57.252246+00:00"
+}
