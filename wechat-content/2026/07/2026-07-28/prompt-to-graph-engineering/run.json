@@ -1,0 +1,62 @@
+{
+  "approvals": {
+    "publish": {
+      "at": "2026-07-29T00:11:13.279995+00:00",
+      "context": {
+        "citation_mode": "key",
+        "color": null,
+        "profile": "fast",
+        "target_account": "西瓜皮水果糖",
+        "theme": null
+      },
+      "files": [
+        "article.md",
+        "article.wechat.html",
+        "imgs/01-nested-loop.png",
+        "imgs/02-context-memory.png",
+        "imgs/03-safety-ladder.png",
+        "imgs/cover.png",
+        "sources.json"
+      ],
+      "sha256": "e8fc50a9f604a6aa1dd4651f2ceb83fd7fb98bd32e7da49f2657e90c8405ab06"
+    }
+  },
+  "citation_mode": "key",
+  "created_at": "2026-07-28T16:23:16.157156+00:00",
+  "external": {
+    "git_commit": null,
+    "media_id": "iH-Hzok0G1wdGrK5DtuPA-azwxu7FrNErW_6OJugTP-i69nt9H_ZUKT7BBSBvxjj",
+    "pushed": false
+  },
+  "history": [
+    {
+      "at": "2026-07-28T16:23:16.157516+00:00",
+      "state": "CREATED"
+    },
+    {
+      "at": "2026-07-28T16:54:19.948075+00:00",
+      "state": "PREVIEW_READY"
+    },
+    {
+      "at": "2026-07-29T00:11:13.325711+00:00",
+      "state": "PUBLISH_APPROVED"
+    },
+    {
+      "at": "2026-07-29T00:14:02.494620+00:00",
+      "state": "WECHAT_DRAFTED"
+    }
+  ],
+  "metadata": {
+    "account": "西瓜皮水果糖",
+    "author": "西瓜皮水果糖",
+    "brand": "西瓜皮水果糖"
+  },
+  "profile": "fast",
+  "schema": 2,
+  "source": {
+    "path": "/Users/sunye/develop/code_repository/github_blog/drafts-agent-hot-terms/01-agentic-ai-2026.md",
+    "sha256": "5cd3546754a917b73ba119130810a93dd5b43bc7b32b69af73847146f749edfc"
+  },
+  "state": "WECHAT_DRAFTED",
+  "updated_at": "2026-07-29T00:14:02.494367+00:00"
+}

@@ -1,0 +1,5 @@
+[
+  {"id":1,"title":"Building effective agents","publisher":"Anthropic","url":"https://www.anthropic.com/engineering/building-effective-agents","published_at":"2024-12-19","verified_at":"2026-07-29","status":"verified","claims":["Agent workflow and agent loop should be selected for task complexity."]},
+  {"id":2,"title":"A practical guide to building agents","publisher":"OpenAI","url":"https://openai.com/business/guides-and-resources/a-practical-guide-to-building-agents/","published_at":null,"verified_at":"2026-07-29","status":"verified","claims":["Agent systems need guardrails, tools and evaluation."]},
+  {"id":3,"title":"LLM01: Prompt Injection","publisher":"OWASP GenAI Security Project","url":"https://genai.owasp.org/llmrisk/llm01-prompt-injection/","published_at":"2025-11-18","verified_at":"2026-07-29","status":"verified","claims":["Prompt injection is a relevant agent-system risk."]}
+]
