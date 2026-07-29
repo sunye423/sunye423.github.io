@@ -1,0 +1,57 @@
+{
+  "approvals": {
+    "publish": {
+      "at": "2026-07-29T14:56:57.097050+00:00",
+      "context": {
+        "citation_mode": "none",
+        "color": "blue",
+        "profile": "fast",
+        "target_account": "xiguapi",
+        "theme": "default"
+      },
+      "files": [
+        "article.md",
+        "article.wechat.html",
+        "imgs/01-orchestration-patterns.png",
+        "imgs/cover.png"
+      ],
+      "sha256": "ff7e6532f537163f6995031c9fc1a63e863b535b3eb0e6ef17a1627fda0b491f"
+    }
+  },
+  "citation_mode": "none",
+  "created_at": "2026-07-27T16:56:22.217474+00:00",
+  "external": {
+    "git_commit": null,
+    "media_id": null,
+    "pushed": false
+  },
+  "history": [
+    {
+      "at": "2026-07-27T16:56:22.217704+00:00",
+      "state": "CREATED"
+    },
+    {
+      "at": "2026-07-29T14:56:57.055306+00:00",
+      "state": "PREVIEW_READY"
+    },
+    {
+      "at": "2026-07-29T14:56:57.136936+00:00",
+      "state": "PUBLISH_APPROVED"
+    }
+  ],
+  "metadata": {
+    "account": "xiguapi",
+    "author": "西瓜皮水果糖",
+    "brand": "西瓜皮水果糖",
+    "color": "blue",
+    "theme": "default"
+  },
+  "profile": "fast",
+  "schema": 2,
+  "source": {
+    "path": "/Users/sunye/develop/code_repository/github_blog/wechat-content-worktree/wechat-content/2026/07/2026-07-28/multi-agent-orchestration/draft.md",
+    "sha256": "fafbd2f83c8575be4b32b0bfde3d4788614e33ab8907bc4132fa9aa81e97ac92"
+  },
+  "state": "PUBLISH_APPROVED",
+  "updated_at": "2026-07-29T14:56:57.136767+00:00"
+}
