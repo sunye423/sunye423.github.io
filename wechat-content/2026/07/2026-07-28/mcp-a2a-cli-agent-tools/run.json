@@ -1,0 +1,62 @@
+{
+  "approvals": {
+    "publish": {
+      "at": "2026-07-29T00:11:13.374737+00:00",
+      "context": {
+        "citation_mode": "key",
+        "color": null,
+        "profile": "fast",
+        "target_account": "西瓜皮水果糖",
+        "theme": null
+      },
+      "files": [
+        "article.md",
+        "article.wechat.html",
+        "imgs/01-transport.png",
+        "imgs/02-a2a-task.png",
+        "imgs/03-choice-tree.png",
+        "imgs/cover.png",
+        "sources.json"
+      ],
+      "sha256": "d65ae7f0aeb04205a3f32f0d517a08cb8c3198b8ead2a06c2fd49e4b907ebce5"
+    }
+  },
+  "citation_mode": "key",
+  "created_at": "2026-07-28T16:23:16.198599+00:00",
+  "external": {
+    "git_commit": null,
+    "media_id": "iH-Hzok0G1wdGrK5DtuPAw_McYA0YtfBx2RNFiBjtUdxCRPlBiXRFtgd4dz-pvz3",
+    "pushed": false
+  },
+  "history": [
+    {
+      "at": "2026-07-28T16:23:16.198974+00:00",
+      "state": "CREATED"
+    },
+    {
+      "at": "2026-07-28T16:54:19.992561+00:00",
+      "state": "PREVIEW_READY"
+    },
+    {
+      "at": "2026-07-29T00:11:13.417745+00:00",
+      "state": "PUBLISH_APPROVED"
+    },
+    {
+      "at": "2026-07-29T00:15:18.309474+00:00",
+      "state": "WECHAT_DRAFTED"
+    }
+  ],
+  "metadata": {
+    "account": "西瓜皮水果糖",
+    "author": "西瓜皮水果糖",
+    "brand": "西瓜皮水果糖"
+  },
+  "profile": "fast",
+  "schema": 2,
+  "source": {
+    "path": "/Users/sunye/develop/code_repository/github_blog/drafts-agent-hot-terms/02-mcp-protocol.md",
+    "sha256": "f82462c46b0b6efd0e1055076b04e0fd64ee35f7a8dc559254036080333beaba"
+  },
+  "state": "WECHAT_DRAFTED",
+  "updated_at": "2026-07-29T00:15:18.309172+00:00"
+}

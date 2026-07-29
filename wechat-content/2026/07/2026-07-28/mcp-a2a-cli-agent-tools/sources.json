@@ -1,0 +1,5 @@
+[
+  {"id":1,"title":"MCP architecture overview","publisher":"Model Context Protocol","url":"https://modelcontextprotocol.io/docs/learn/architecture","published_at":null,"verified_at":"2026-07-29","status":"verified","claims":["MCP connects host, client and server capabilities."]},
+  {"id":2,"title":"MCP transports","publisher":"Model Context Protocol","url":"https://modelcontextprotocol.io/specification/2025-11-25/basic/transports","published_at":"2025-11-25","verified_at":"2026-07-29","status":"verified","claims":["MCP specifies stdio and Streamable HTTP transports and JSON-RPC message rules."]},
+  {"id":3,"title":"A2A protocol specification","publisher":"Agent2Agent Protocol","url":"https://a2a-protocol.org/v0.2.0/specification/","published_at":null,"verified_at":"2026-07-29","status":"verified","claims":["A2A defines Agent Cards, Tasks, Messages, Artifacts and HTTP/JSON-RPC transport."]}
+]
