@@ -1,0 +1,57 @@
+{
+  "approvals": {
+    "publish": {
+      "at": "2026-07-29T14:56:57.840068+00:00",
+      "context": {
+        "citation_mode": "none",
+        "color": "blue",
+        "profile": "fast",
+        "target_account": "xiguapi",
+        "theme": "default"
+      },
+      "files": [
+        "article.md",
+        "article.wechat.html",
+        "imgs/01-guardrail-layers.png",
+        "imgs/cover.png"
+      ],
+      "sha256": "2d82472d28257fbd698bc29679ef7382e97748750fba62121b90b31d50de7475"
+    }
+  },
+  "citation_mode": "none",
+  "created_at": "2026-07-27T16:56:22.418281+00:00",
+  "external": {
+    "git_commit": null,
+    "media_id": null,
+    "pushed": false
+  },
+  "history": [
+    {
+      "at": "2026-07-27T16:56:22.418489+00:00",
+      "state": "CREATED"
+    },
+    {
+      "at": "2026-07-29T14:56:57.796906+00:00",
+      "state": "PREVIEW_READY"
+    },
+    {
+      "at": "2026-07-29T14:56:57.881263+00:00",
+      "state": "PUBLISH_APPROVED"
+    }
+  ],
+  "metadata": {
+    "account": "xiguapi",
+    "author": "西瓜皮水果糖",
+    "brand": "西瓜皮水果糖",
+    "color": "blue",
+    "theme": "default"
+  },
+  "profile": "fast",
+  "schema": 2,
+  "source": {
+    "path": "/Users/sunye/develop/code_repository/github_blog/wechat-content-worktree/wechat-content/2026/07/2026-07-28/agent-guardrails/draft.md",
+    "sha256": "6c56f76c3b49fb7aaa51fa77fa9ceac68e59624a17f4a0b12cece920dd4deab3"
+  },
+  "state": "PUBLISH_APPROVED",
+  "updated_at": "2026-07-29T14:56:57.881080+00:00"
+}
