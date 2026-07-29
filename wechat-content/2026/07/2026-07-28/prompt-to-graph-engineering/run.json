@@ -26,7 +26,7 @@
   "external": {
     "git_commit": "fcfb14be2928f0ea3691ea355f6f267c89e30972",
     "media_id": "iH-Hzok0G1wdGrK5DtuPA-azwxu7FrNErW_6OJugTP-i69nt9H_ZUKT7BBSBvxjj",
-    "pushed": false
+    "pushed": true
   },
   "history": [
     {
@@ -48,6 +48,14 @@
     {
       "at": "2026-07-29T00:17:25.040493+00:00",
       "state": "COMMITTED"
+    },
+    {
+      "at": "2026-07-29T00:17:32.539044+00:00",
+      "state": "PUSHED"
+    },
+    {
+      "at": "2026-07-29T00:17:32.539927+00:00",
+      "state": "COMPLETED"
     }
   ],
   "metadata": {
@@ -61,6 +69,6 @@
     "path": "/Users/sunye/develop/code_repository/github_blog/drafts-agent-hot-terms/01-agentic-ai-2026.md",
     "sha256": "5cd3546754a917b73ba119130810a93dd5b43bc7b32b69af73847146f749edfc"
   },
-  "state": "COMMITTED",
-  "updated_at": "2026-07-29T00:17:25.040490+00:00"
+  "state": "COMPLETED",
+  "updated_at": "2026-07-29T00:17:32.540629+00:00"
 }
