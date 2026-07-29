@@ -1,0 +1,7 @@
+[
+  {"id":1,"title":"Codex","publisher":"OpenAI","url":"https://openai.com/codex/","published_at":null,"verified_at":"2026-07-29","status":"verified","claims":["Codex is offered across coding-agent workflows including local and cloud surfaces."]},
+  {"id":2,"title":"Cursor Agent overview","publisher":"Cursor","url":"https://docs.cursor.com/en/agent/overview","published_at":null,"verified_at":"2026-07-29","status":"verified","claims":["Cursor Agent supports search, edits, terminal work, diff review and checkpoints."]},
+  {"id":3,"title":"CodeBuddy Agents Quickstart","publisher":"Tencent Cloud","url":"https://www.codebuddy.ai/docs/ide/User-guide/Agent-Mode/Quickstart","published_at":null,"verified_at":"2026-07-29","status":"verified","claims":["CodeBuddy documents parallel tasks, artifact review and preview in its IDE agent workflow."]},
+  {"id":4,"title":"Qoder Introduction","publisher":"Qoder","url":"https://docs.qoder.com/","published_at":null,"verified_at":"2026-07-29","status":"verified","claims":["Qoder documents Editor, Quest, MCP and CLI surfaces."]},
+  {"id":5,"title":"Cursor Background Agents","publisher":"Cursor","url":"https://docs.cursor.com/background-agent","published_at":null,"verified_at":"2026-07-29","status":"verified","claims":["Cursor background agents run in remote isolated environments and require security review."]}
+]
