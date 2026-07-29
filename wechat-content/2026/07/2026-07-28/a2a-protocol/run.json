@@ -1,0 +1,57 @@
+{
+  "approvals": {
+    "publish": {
+      "at": "2026-07-29T14:56:56.975658+00:00",
+      "context": {
+        "citation_mode": "none",
+        "color": "blue",
+        "profile": "fast",
+        "target_account": "xiguapi",
+        "theme": "default"
+      },
+      "files": [
+        "article.md",
+        "article.wechat.html",
+        "imgs/01-a2a-collaboration.png",
+        "imgs/cover.png"
+      ],
+      "sha256": "c89323518b0b8d683d278ac04d8e707bd9d8674285bec1b34f8905a32aef26e1"
+    }
+  },
+  "citation_mode": "none",
+  "created_at": "2026-07-27T16:56:22.183961+00:00",
+  "external": {
+    "git_commit": null,
+    "media_id": null,
+    "pushed": false
+  },
+  "history": [
+    {
+      "at": "2026-07-27T16:56:22.184181+00:00",
+      "state": "CREATED"
+    },
+    {
+      "at": "2026-07-29T14:56:56.933328+00:00",
+      "state": "PREVIEW_READY"
+    },
+    {
+      "at": "2026-07-29T14:56:57.016540+00:00",
+      "state": "PUBLISH_APPROVED"
+    }
+  ],
+  "metadata": {
+    "account": "xiguapi",
+    "author": "西瓜皮水果糖",
+    "brand": "西瓜皮水果糖",
+    "color": "blue",
+    "theme": "default"
+  },
+  "profile": "fast",
+  "schema": 2,
+  "source": {
+    "path": "/Users/sunye/develop/code_repository/github_blog/wechat-content-worktree/wechat-content/2026/07/2026-07-28/a2a-protocol/draft.md",
+    "sha256": "2d046b7f3851b8aa570f0833f6dcab145cc7ae7e46860d7379d7b39e03fa8201"
+  },
+  "state": "PUBLISH_APPROVED",
+  "updated_at": "2026-07-29T14:56:57.016393+00:00"
+}
